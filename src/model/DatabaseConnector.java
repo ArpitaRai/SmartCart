@@ -13,8 +13,6 @@ private static Connection databaseConnection = null;
 	private DatabaseConnector() {
 	}
 	
-	// Singleton class instance to avoid multiple Database connections
-	// Returns Database connection instance
 	public static Connection getInstance() throws Exception {
 		if (databaseConnection == null) {
 			synchronized (DatabaseConnector.class) {
