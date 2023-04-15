@@ -9,35 +9,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="700.0" minWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
-   <children>
-      <Label fx:id="lblSignIn" alignment="CENTER" layoutX="549.0" layoutY="184.0" prefHeight="56.0" prefWidth="215.0" text="Sign in/Register" textFill="#31ab0f">
+<AnchorPane prefHeight="610.0" prefWidth="884.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+    <children>
+      <ImageView fitHeight="631.0" fitWidth="845.0" layoutX="19.0" layoutY="28.0" opacity="0.28" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../bin/images/Supermarket.jpg" />
+         </image>
+      </ImageView>
+        <Label fx:id="lblSignIn" alignment="CENTER" layoutX="310.0" layoutY="183.0" prefHeight="56.0" prefWidth="300.0" text="Sign in/Register" textFill="#31ab0f">
+            <font>
+                <Font size="28.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="134.0" fitWidth="187.0" layoutX="368.0" layoutY="21.0" preserveRatio="true">
+            <image>
+                <Image url="@../../bin/images/SmartCartLogo.jpeg" />
+            </image>
+        </ImageView>
+        <Label fx:id="username_label" layoutX="241.0" layoutY="271.0" prefHeight="26.0" prefWidth="100.0" text="Username:">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="13.600000381469727" />
          </font></Label>
-      <Label fx:id="lblPassword" layoutX="508.0" layoutY="328.0" text="Password:" />
-      <Label fx:id="lblUsername" layoutX="507.0" layoutY="266.0" text="Username:" />
-      <TextField fx:id="tfUsername" layoutX="690.0" layoutY="262.0" />
-      <Button fx:id="btnSignIn" layoutX="526.0" layoutY="440.0" mnemonicParsing="false" onAction="#goToCatalog" prefHeight="48.0" prefWidth="122.0" text="Sign In" textFill="#2fc955">
+        <Label fx:id="password_label" layoutX="241.0" layoutY="337.0" prefHeight="26.0" prefWidth="100.0" text="Password:">
          <font>
-            <Font size="23.0" />
-         </font></Button>
-      <Button fx:id="btnRegister" layoutX="705.0" layoutY="441.0" mnemonicParsing="false" onAction="#goToRegistration" prefHeight="47.0" prefWidth="114.0" text="Register" textFill="#49cd54">
-         <font>
-            <Font size="23.0" />
-         </font></Button>
-      <ImageView fitHeight="338.0" fitWidth="416.0" layoutX="17.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/healthy-groceries.jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="207.0" fitWidth="416.0" layoutX="18.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/FastnFreshLogo.jpeg" />
-         </image>
-      </ImageView>
-      <PasswordField fx:id="tfPassword" layoutX="690.0" layoutY="324.0" prefHeight="26.0" prefWidth="160.0" />
-      <Label fx:id="errorUserLabel" layoutX="696.0" layoutY="294.0" prefHeight="17.0" prefWidth="160.0" text="Enter Valid Username" textFill="#e10b0b" visible="false" />
-      <Label fx:id="errorPassLabel" layoutX="696.0" layoutY="358.0" prefHeight="17.0" prefWidth="160.0" text="Enter Valid Password" textFill="#e10b0b" visible="false" />
-   </children>
+            <Font name="System Bold" size="13.600000381469727" />
+         </font></Label>
+        <TextField fx:id="username_text" layoutX="370.0" layoutY="266.0" prefHeight="36.0" prefWidth="300.0" promptText="Enter username" />
+        <PasswordField fx:id="password_text" layoutX="370.0" layoutY="332.0" prefHeight="36.0" prefWidth="300.0" promptText="Enter password" />
+        <Button fx:id="signIn_button" layoutX="264.0" layoutY="405.0" mnemonicParsing="false" onAction="#goToCatalog" prefHeight="50.0" prefWidth="120.0" styleClass="button-green" text="Sign In" />
+        <Button fx:id="register_button" layoutX="441.0" layoutY="405.0" mnemonicParsing="false" onAction="#RegistrationPage" prefHeight="50.0" prefWidth="218.0" styleClass="button-green" text="Don't have an account? Register" />
+        <Label fx:id="username_error" layoutX="400.0" layoutY="310.0" prefHeight="17.0" prefWidth="300.0" text="Enter Valid Username" textFill="#e10b0b" visible="false" />
+        <Label fx:id="password_error" layoutX="400.0" layoutY="360.0" prefHeight="17.0" prefWidth="300.0" text="Enter Valid Password" textFill="#e10b0b" visible="false" />
+</children>
 </AnchorPane>
