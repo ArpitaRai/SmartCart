@@ -76,7 +76,7 @@ public class PaymentSceneController extends ProductBaseController {
 
 	@FXML
 	void goToLogin(ActionEvent event) {
-		logOff();
+		logOut();
 		ScreenController.goToLoginPage(event);
 	}
 
@@ -168,18 +168,18 @@ public class PaymentSceneController extends ProductBaseController {
 		// Adding buttons to the dialog pane
 		dialog.getDialogPane().getButtonTypes().add(type);
 		dialog.showAndWait();
-		logOff();
+		logOut();
 		ScreenController.goToCatalogPage(event);
 	}
 
 	private void updateCartItems() {
 		try {
-			List<CartItem> cartList = cart.getCartItems();
+			List<CartItem> cartList = cart.getItems();
 			Connection conn = DatabaseConnector.getInstance();
 			for (CartItem item : cartList) {
 				String key = item.getProductId();
 				Product productInventory = inventoryItems.get(key);
-				int netQuantity = productInventory.getQuantity() - item.getQuantity();
+				int netQuantity = productInventory.getQty() - item.getQty();
 				saveOrderHistory(conn, item, productInventory);
 				updateInventory(conn, item.getProductId(), netQuantity);
 			}
@@ -211,7 +211,7 @@ public class PaymentSceneController extends ProductBaseController {
 			orderStmt = conn.prepareStatement(query);
 			orderStmt.setString(1, userId);
 			orderStmt.setString(2, item.getProductId());
-			orderStmt.setString(3, item.getItemTotalValue());
+			orderStmt.setString(3, item.getTotalValueItem());
 			orderStmt.setString(4, product.getCatalog());
 			orderStmt.setString(5, order_date);
 			orderStmt.executeUpdate();
