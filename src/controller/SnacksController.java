@@ -24,7 +24,7 @@ import model.DatabaseConnector;
 public class SnacksController extends ProductBaseController {
 
 	@FXML
-	Label lblBlueberryBarPrice;
+	Label lblProteinBarPrice;
 	@FXML
 	Label lblCheetosPrice;
 	@FXML
@@ -40,10 +40,10 @@ public class SnacksController extends ProductBaseController {
 	@FXML
 	Label lblTostitosPrice;
 	@FXML
-	Label lblTrailPrice;
+	Label lblDoritosPrice;
 
 	@FXML
-	Spinner<Integer> spinBlueberryBar;
+	Spinner<Integer> spinProteinBar;
 	@FXML
 	Spinner<Integer> spinCheetos;
 	@FXML
@@ -59,10 +59,10 @@ public class SnacksController extends ProductBaseController {
 	@FXML
 	Spinner<Integer> spinTostitos;
 	@FXML
-	Spinner<Integer> spinTrail;
+	Spinner<Integer> spinDoritos;
 
 	@FXML
-	Button btnBlueberryBar;
+	Button btnProteinBar;
 	@FXML
 	Button btnCheetos;
 	@FXML
@@ -78,7 +78,7 @@ public class SnacksController extends ProductBaseController {
 	@FXML
 	Button btnTostitos;
 	@FXML
-	Button btnTrail;
+	Button btnDoritos;
 
 	public void initialize() {
 
@@ -94,7 +94,7 @@ public class SnacksController extends ProductBaseController {
 			e.printStackTrace();
 		}
 
-		lblBlueberryBarPrice.setText("$" + inventoryItems.get("SNA001").getPrice() + "/ct");
+		lblProteinBarPrice.setText("$" + inventoryItems.get("SNA001").getPrice() + "/ct");
 		lblCheetosPrice.setText("$" + inventoryItems.get("SNA002").getPrice() + "/ct");
 		lblChipsPrice.setText("$" + inventoryItems.get("SNA003").getPrice() + "/ct");
 		lblChocolatePrice.setText("$" + inventoryItems.get("SNA004").getPrice() + "/ct");
@@ -102,61 +102,61 @@ public class SnacksController extends ProductBaseController {
 		lblPopcornPrice.setText("$" + inventoryItems.get("SNA006").getPrice() + "/ct");
 		lblPringlesPrice.setText("$" + inventoryItems.get("SNA007").getPrice() + "/ct");
 		lblTostitosPrice.setText("$" + inventoryItems.get("SNA008").getPrice() + "/ct");
-		lblTrailPrice.setText("$" + inventoryItems.get("SNA009").getPrice() + "/ct");
+		lblDoritosPrice.setText("$" + inventoryItems.get("SNA009").getPrice() + "/ct");
 
-		spinBlueberryBar.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA001").getQuantity(), 0));
+		spinProteinBar.setValueFactory(
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA001").getQty(), 0));
 
 		spinCheetos.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA002").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA002").getQty(), 0));
 
 		spinChips.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA003").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA003").getQty(), 0));
 
 		spinChocolate.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA004").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA004").getQty(), 0));
 
 		spinOnionDip.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA005").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA005").getQty(), 0));
 
 		spinPopcorn.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA006").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA006").getQty(), 0));
 
 		spinPringles.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA007").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA007").getQty(), 0));
 
 		spinTostitos.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA008").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA008").getQty(), 0));
 
-		spinTrail.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA009").getQuantity(), 0));
+		spinDoritos.setValueFactory(
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("SNA009").getQty(), 0));
 
-		if (inventoryItems.get("SNA001").getQuantity() == 0) {
-			setOutOfStockField(lblBlueberryBarPrice, spinBlueberryBar, btnBlueberryBar);
+		if (inventoryItems.get("SNA001").getQty() == 0) {
+			setOutOfStockField(lblProteinBarPrice, spinProteinBar, btnProteinBar);
 		}
-		if (inventoryItems.get("SNA002").getQuantity() == 0) {
+		if (inventoryItems.get("SNA002").getQty() == 0) {
 			setOutOfStockField(lblCheetosPrice, spinCheetos, btnCheetos);
 		}
-		if (inventoryItems.get("SNA003").getQuantity() == 0) {
+		if (inventoryItems.get("SNA003").getQty() == 0) {
 			setOutOfStockField(lblChipsPrice, spinChips, btnChips);
 		}
-		if (inventoryItems.get("SNA004").getQuantity() == 0) {
+		if (inventoryItems.get("SNA004").getQty() == 0) {
 			setOutOfStockField(lblChocolatePrice, spinChocolate, btnChocolate);
 		}
-		if (inventoryItems.get("SNA005").getQuantity() == 0) {
+		if (inventoryItems.get("SNA005").getQty() == 0) {
 			setOutOfStockField(lblOnionDipPrice, spinOnionDip, btnOnionDip);
 		}
-		if (inventoryItems.get("SNA006").getQuantity() == 0) {
+		if (inventoryItems.get("SNA006").getQty() == 0) {
 			setOutOfStockField(lblPopcornPrice, spinPopcorn, btnPopcorn);
 		}
-		if (inventoryItems.get("SNA007").getQuantity() == 0) {
+		if (inventoryItems.get("SNA007").getQty() == 0) {
 			setOutOfStockField(lblPringlesPrice, spinPringles, btnPringles);
 		}
-		if (inventoryItems.get("SNA008").getQuantity() == 0) {
+		if (inventoryItems.get("SNA008").getQty() == 0) {
 			setOutOfStockField(lblTostitosPrice, spinTostitos, btnTostitos);
 		}
-		if (inventoryItems.get("SNA009").getQuantity() == 0) {
-			setOutOfStockField(lblTrailPrice, spinTrail, btnTrail);
+		if (inventoryItems.get("SNA009").getQty() == 0) {
+			setOutOfStockField(lblDoritosPrice, spinDoritos, btnDoritos);
 		}
 
 	}
@@ -167,7 +167,7 @@ public class SnacksController extends ProductBaseController {
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnBlueberryBar")) {
 			CartItem ci = new CartItem("SNA001", inventoryItems.get("SNA001").getProductName(),
-					(Integer) spinBlueberryBar.getValue(), inventoryItems.get("SNA001").getPrice());
+					(Integer) spinProteinBar.getValue(), inventoryItems.get("SNA001").getPrice());
 
 			cart.addProduct(ci);
 
@@ -228,9 +228,9 @@ public class SnacksController extends ProductBaseController {
 
 		}
 
-		if (((Button) event.getTarget()).getId().toString().equals("btnTrail")) {
+		if (((Button) event.getTarget()).getId().toString().equals("btnDoritos")) {
 			CartItem ci = new CartItem("SNA009", inventoryItems.get("SNA009").getProductName(),
-					(Integer) spinTrail.getValue(), inventoryItems.get("SNA009").getPrice());
+					(Integer) spinDoritos.getValue(), inventoryItems.get("SNA009").getPrice());
 
 			cart.addProduct(ci);
 
@@ -255,7 +255,7 @@ public class SnacksController extends ProductBaseController {
 	// Logout of the application and return to the Login Page
 	@FXML
 	void goToLogin(ActionEvent event) {
-		logOff();
+		logOut();
 		ScreenController.goToLoginPage(event);
 	}
 

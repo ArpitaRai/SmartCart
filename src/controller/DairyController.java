@@ -20,7 +20,7 @@ public class DairyController extends ProductBaseController {
 	@FXML Label lblHeavyCreamPrice;
 	@FXML Label lblIceCreamPrice;
 	@FXML Label lblChocolateMilkPrice;
-	@FXML Label lblSourCreamPrice;
+	@FXML Label lblCottageCheesePrice;
 	@FXML Label lblStringCheesePrice;
 	@FXML Label lblMozzarellaCheesePrice;
 	@FXML Label lblYogurtPrice;
@@ -30,7 +30,7 @@ public class DairyController extends ProductBaseController {
 	@FXML Spinner<Integer> spinHeavyCream;
 	@FXML Spinner<Integer> spinIceCream;
 	@FXML Spinner<Integer>spinChocolateMilk;
-	@FXML Spinner<Integer> spinSourCream;
+	@FXML Spinner<Integer> spinCottageCheese;
 	@FXML Spinner<Integer> spinStringCheese;
 	@FXML Spinner<Integer> spinMozzarellaCheese;
 	@FXML Spinner<Integer> spinYogurt;
@@ -40,7 +40,7 @@ public class DairyController extends ProductBaseController {
 	@FXML Button btnHeavyCream;
 	@FXML Button btnIceCream;
 	@FXML Button btnChocolateMilk;
-	@FXML Button btnSourCream;
+	@FXML Button btnCottageCheese;
 	@FXML Button btnStringCheese;
 	@FXML Button btnMozzarellaCheese;
 	@FXML Button btnYogurt;
@@ -64,63 +64,63 @@ public class DairyController extends ProductBaseController {
 		lblHeavyCreamPrice.setText("$" + inventoryItems.get("DAI003").getPrice());
 		lblIceCreamPrice.setText("$" + inventoryItems.get("DAI004").getPrice());
 		lblChocolateMilkPrice.setText("$" + inventoryItems.get("DAI005").getPrice());
-		lblSourCreamPrice.setText("$" + inventoryItems.get("DAI006").getPrice());
+		lblCottageCheesePrice.setText("$" + inventoryItems.get("DAI006").getPrice());
 		lblStringCheesePrice.setText("$" + inventoryItems.get("DAI007").getPrice());
 		lblMozzarellaCheesePrice.setText("$" + inventoryItems.get("DAI008").getPrice());
 		lblYogurtPrice.setText("$" + inventoryItems.get("DAI009").getPrice());
 
 		spinMilk.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI001").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI001").getQty(), 0));
 
 		spinButter.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI002").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI002").getQty(), 0));
 
 		spinHeavyCream.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI003").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI003").getQty(), 0));
 
 		spinIceCream.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI004").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI004").getQty(), 0));
 
 		spinChocolateMilk.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI005").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI005").getQty(), 0));
 
-		spinSourCream.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI006").getQuantity(), 0));
+		spinCottageCheese.setValueFactory(
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI006").getQty(), 0));
 
 		spinStringCheese.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI007").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI007").getQty(), 0));
 
 		spinMozzarellaCheese.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI008").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI008").getQty(), 0));
 
 		spinYogurt.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI009").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("DAI009").getQty(), 0));
 		
-		if(inventoryItems.get("DAI001").getQuantity() == 0) {
+		if(inventoryItems.get("DAI001").getQty() == 0) {
 			setOutOfStockField(lblMilkPrice, spinMilk, btnMilk);
 		}
-		if(inventoryItems.get("DAI002").getQuantity() == 0) {
+		if(inventoryItems.get("DAI002").getQty() == 0) {
 			setOutOfStockField(lblButterPrice, spinButter, btnButter);
 		}
-		if(inventoryItems.get("DAI003").getQuantity() == 0) {
+		if(inventoryItems.get("DAI003").getQty() == 0) {
 			setOutOfStockField(lblHeavyCreamPrice, spinHeavyCream, btnHeavyCream);
 		}
-		if(inventoryItems.get("DAI004").getQuantity() == 0) {
+		if(inventoryItems.get("DAI004").getQty() == 0) {
 			setOutOfStockField(lblIceCreamPrice, spinIceCream, btnIceCream);
 		}
-		if(inventoryItems.get("DAI005").getQuantity() == 0) {
+		if(inventoryItems.get("DAI005").getQty() == 0) {
 			setOutOfStockField(lblChocolateMilkPrice, spinChocolateMilk, btnChocolateMilk);
 		}
-		if(inventoryItems.get("DAI006").getQuantity() == 0) {
-			setOutOfStockField(lblSourCreamPrice, spinSourCream, btnSourCream);
+		if(inventoryItems.get("DAI006").getQty() == 0) {
+			setOutOfStockField(lblCottageCheesePrice, spinCottageCheese, btnCottageCheese);
 		}
-		if(inventoryItems.get("DAI007").getQuantity() == 0) {
+		if(inventoryItems.get("DAI007").getQty() == 0) {
 			setOutOfStockField(lblStringCheesePrice, spinStringCheese, btnStringCheese);
 		}
-		if(inventoryItems.get("DAI008").getQuantity() == 0) {
+		if(inventoryItems.get("DAI008").getQty() == 0) {
 			setOutOfStockField(lblMozzarellaCheesePrice, spinMozzarellaCheese, btnMozzarellaCheese);
 		}
-		if(inventoryItems.get("DAI009").getQuantity() == 0) {
+		if(inventoryItems.get("DAI009").getQty() == 0) {
 			setOutOfStockField(lblYogurtPrice, spinYogurt, btnYogurt);
 		}
 
@@ -170,7 +170,7 @@ public class DairyController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnSourCream")) {
-			CartItem ci = new CartItem("DAI006", "Sour Cream", (Integer) spinSourCream.getValue(),
+			CartItem ci = new CartItem("DAI006", "Sour Cream", (Integer) spinCottageCheese.getValue(),
 					inventoryItems.get("DAI006").getPrice());
 
 			cart.addProduct(ci);
@@ -220,7 +220,7 @@ public class DairyController extends ProductBaseController {
 	// Logout of the application and return to the Login Page
 	@FXML
     void goToLogin(ActionEvent event) {
-    	logOff();
+    	logOut();
     	ScreenController.goToLoginPage(event);
     }
 	

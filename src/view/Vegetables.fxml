@@ -167,12 +167,12 @@
                      </image>
                   </ImageView>
                   <Label text="Scallions" />
-                  <Label fx:id="lblScallionsPrice" text="Price" />
-                  <Spinner fx:id="spinScallions" prefHeight="26.0" prefWidth="76.0">
+                  <Label fx:id="lblBroccoliPrice" text="Price" />
+                  <Spinner fx:id="spinBroccoli" prefHeight="26.0" prefWidth="76.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnScallions" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnBroccoli" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>

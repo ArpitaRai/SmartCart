@@ -101,57 +101,57 @@ public class MeatController extends ProductBaseController {
 		lblPrawnsPrice.setText("$" + inventoryItems.get("MEA009").getPrice());
 
 		spinChicken.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA001").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA001").getQty(), 0));
 
 		spinFish.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA002").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA002").getQty(), 0));
 
 		spinBeef.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA003").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA003").getQty(), 0));
 
 		spinCrab.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA004").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA004").getQty(), 0));
 
 		spinClam.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA005").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA005").getQty(), 0));
 
 		spinLamb.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA006").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA006").getQty(), 0));
 
 		spinPork.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA007").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA007").getQty(), 0));
 
 		spinTurkey.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA008").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA008").getQty(), 0));
 
 		spinPrawns.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA009").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("MEA009").getQty(), 0));
 		
-		if(inventoryItems.get("MEA001").getQuantity() == 0) {
+		if(inventoryItems.get("MEA001").getQty() == 0) {
 			setOutOfStockField(lblChickenPrice, spinChicken, btnChicken);
 		}
-		if(inventoryItems.get("MEA002").getQuantity() == 0) {
+		if(inventoryItems.get("MEA002").getQty() == 0) {
 			setOutOfStockField(lblFishPrice, spinFish, btnFish);
 		}
-		if(inventoryItems.get("MEA003").getQuantity() == 0) {
+		if(inventoryItems.get("MEA003").getQty() == 0) {
 			setOutOfStockField(lblBeefPrice, spinBeef, btnBeef);
 		}
-		if(inventoryItems.get("MEA004").getQuantity() == 0) {
+		if(inventoryItems.get("MEA004").getQty() == 0) {
 			setOutOfStockField(lblCrabPrice, spinCrab, btnCrab);
 		}
-		if(inventoryItems.get("MEA005").getQuantity() == 0) {
+		if(inventoryItems.get("MEA005").getQty() == 0) {
 			setOutOfStockField(lblClamPrice, spinClam, btnClam);
 		}
-		if(inventoryItems.get("MEA006").getQuantity() == 0) {
+		if(inventoryItems.get("MEA006").getQty() == 0) {
 			setOutOfStockField(lblLambPrice, spinLamb, btnLamb);
 		}
-		if(inventoryItems.get("MEA007").getQuantity() == 0) {
+		if(inventoryItems.get("MEA007").getQty() == 0) {
 			setOutOfStockField(lblPorkPrice, spinPork, btnPork);
 		}
-		if(inventoryItems.get("MEA008").getQuantity() == 0) {
+		if(inventoryItems.get("MEA008").getQty() == 0) {
 			setOutOfStockField(lblTurkeyPrice, spinTurkey, btnTurkey);
 		}
-		if(inventoryItems.get("MEA009").getQuantity() == 0) {
+		if(inventoryItems.get("MEA009").getQty() == 0) {
 			setOutOfStockField(lblPrawnsPrice, spinPrawns, btnPrawns);
 		}
 
@@ -251,7 +251,7 @@ public class MeatController extends ProductBaseController {
 	// Logout of the application and return to the Login Page
 	@FXML
     void goToLogin(ActionEvent event) {
-    	logOff();
+    	logOut();
     	ScreenController.goToLoginPage(event);
     }
 	
