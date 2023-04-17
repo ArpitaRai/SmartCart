@@ -44,7 +44,7 @@ public class CatalogController extends ProductBaseController {
 	@FXML
 	public void DrinksPage(ActionEvent event) {
 
-		ScreenController.goToBeveragesPage(event);
+		ScreenController.goToDrinksPage(event);
 	}
 
 	@FXML
@@ -55,7 +55,7 @@ public class CatalogController extends ProductBaseController {
 
 	@FXML
 	void goToLogin(ActionEvent event) {
-		logOff();
+		logOut();
 		ScreenController.goToLoginPage(event);
 	}
 
