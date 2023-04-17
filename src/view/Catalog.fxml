@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="700.0" minWidth="900.0" style="-fx-background-color: SEASHELL;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CatalogController">
+   <children>
+      <Pane layoutX="129.0" layoutY="118.0" prefHeight="566.0" prefWidth="588.0" style="-fx-background-color: white;" />
+      <Button fx:id="FruitsButton" contentDisplay="TOP" layoutX="432.0" layoutY="495.0" mnemonicParsing="false" onAction="#FruitsPage" prefHeight="150.0" prefWidth="218.0" text="Fruits">
+         <graphic>
+            <ImageView fitHeight="120.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/FruitsBowl.jpeg" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="VegetablesButton" contentDisplay="TOP" layoutX="213.0" layoutY="141.0" mnemonicParsing="false" onAction="#VegetablesPage" prefHeight="150.0" prefWidth="218.0" text="Vegetables">
+         <graphic>
+            <ImageView fitHeight="120.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Veggies.jpeg" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="SnacksButton" contentDisplay="TOP" layoutX="432.0" layoutY="141.0" mnemonicParsing="false" onAction="#SnacksPage" prefHeight="154.0" prefWidth="218.0" text="Snacks">
+         <graphic>
+            <ImageView fitHeight="120.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Snacks.jpeg" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="DiaryButton" contentDisplay="TOP" layoutX="213.0" layoutY="495.0" mnemonicParsing="false" onAction="#DairyPage" prefHeight="150.0" prefWidth="218.0" text="Dairy">
+         <graphic>
+            <ImageView fitHeight="120.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Dairy.jpeg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="DrinksButton" contentDisplay="TOP" layoutX="213.0" layoutY="321.0" mnemonicParsing="false" onAction="#DrinksPage" prefHeight="150.0" prefWidth="218.0" text="Drinks">
+         <graphic>
+            <ImageView fitHeight="120.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Drinks.jpeg" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="MeatButton" contentDisplay="TOP" layoutX="432.0" layoutY="321.0" mnemonicParsing="false" onAction="#MeatPage" prefHeight="150.0" prefWidth="218.0" text="Meat">
+         <graphic>
+            <ImageView fitHeight="120.0" fitWidth="200.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/Meat.jpeg" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label fx:id="CatalogLabel" contentDisplay="TOP" layoutX="401.0" layoutY="75.0" text="Catalog">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font></Label>
+      <Button layoutX="723.0" layoutY="139.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="30.0" prefWidth="136.0" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="723.0" layoutY="102.0" mnemonicParsing="false" onAction="#goToCatalogExpenses" prefHeight="30.0" prefWidth="136.0" text="View my Expense" />
+      <Label fx:id="lblUserName" layoutX="70.0" layoutY="39.0" prefHeight="27.0" prefWidth="299.0" text="Hi, ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="723.0" layoutY="66.0" mnemonicParsing="false" onAction="#goToOrderHistory" prefHeight="30.0" prefWidth="136.0" text="Order History" />
+   </children>
+</AnchorPane>
