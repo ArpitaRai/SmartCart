@@ -107,8 +107,8 @@ public class RegistrationController {
 
     private void insertUserData(ActionEvent event) {
         String query = "insert into user_info values (?,?,?,?,?)";
-        try (Connection conn = DatabaseConnector.getInstance();
-             PreparedStatement preparedStmt = conn.prepareStatement(query)) {
+        try {Connection conn = DatabaseConnector.getInstance();
+             PreparedStatement preparedStmt = conn.prepareStatement(query);
 
             preparedStmt.setString(1, userIdField.getText());
             preparedStmt.setString(2, nameField.getText());
@@ -116,7 +116,7 @@ public class RegistrationController {
             preparedStmt.setString(4, emailField.getText());
             preparedStmt.setString(5, passwordField.getText());
             preparedStmt.executeUpdate();
-
+            preparedStmt.close();
             showDialog("User Registration successful!");
             clearFieldValues();
             ScreenController.goToLoginPage(event);

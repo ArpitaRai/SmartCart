@@ -13,8 +13,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MeatController">
+<AnchorPane prefHeight="802.0" prefWidth="1192.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MeatController">
 	<children>
+      <ImageView fitHeight="802.0" fitWidth="1192.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/SuperMarket.jpeg" />
+         </image>
+      </ImageView>
       <GridPane alignment="TOP_CENTER" layoutX="-1.0" layoutY="51.0" prefHeight="599.0" prefWidth="591.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="60.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
