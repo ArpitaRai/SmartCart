@@ -49,6 +49,7 @@ public class DairyController extends ProductBaseController {
 	public void initialize() {
 		// Fetch the Fruit Products information from the Fruits catalog in the Database
 		try {
+		try {
 			ResultSet rs = DatabaseConnector.getItemsFromCatalog("Dairy");
 			while (rs.next()) {
 				inventoryItems.put(rs.getString(1),
@@ -122,6 +123,11 @@ public class DairyController extends ProductBaseController {
 		}
 		if(inventoryItems.get("DAI009").getQty() == 0) {
 			setOutOfStockField(lblYogurtPrice, spinYogurt, btnYogurt);
+		}
+		}
+		catch(Exception e)
+		{
+			e.getStackTrace();
 		}
 
 	}

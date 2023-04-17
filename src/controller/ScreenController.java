@@ -12,11 +12,11 @@ public class ScreenController {
 		public static void showStage(ActionEvent event, String filename, String sceneName) {
 	        try {
 	            Parent parent = FXMLLoader.load(ScreenController.class.getResource(filename));
-	            Scene scene = new Scene(parent, 900, 700);
+	            Scene scene = new Scene(parent, 1192, 802);
 	            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	            appStage.setTitle(sceneName);
 	            appStage.setScene(scene);
-	            appStage.setResizable(false);
+	            appStage.setResizable(true);
 	            appStage.show();
 	        } catch (Exception e) {
 	            System.out.println(e.getMessage());
@@ -31,8 +31,15 @@ public class ScreenController {
 	        showStage(event, "../view/Vegetables.fxml", "Vegetables");
 	    }
 		
-		public static void goToMeatPage(ActionEvent event) {
-	        showStage(event, "../view/Meat.fxml", "Meat");
+		public static void goToPharmacyPage(ActionEvent event) {
+			try {
+	        showStage(event, "../view/Pharmacy.fxml", "Pharmacy");
+	        System.out.println("different sgfgfd");
+			}
+			catch(Exception e)
+			{
+				System.out.println("fgdfg");
+			}
 	    }
 		static void goToCartPage(ActionEvent event) {
 	        showStage(event, "../view/OrderCart.fxml", "Cart");

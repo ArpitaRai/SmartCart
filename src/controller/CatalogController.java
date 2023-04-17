@@ -48,9 +48,9 @@ public class CatalogController extends ProductBaseController {
 	}
 
 	@FXML
-	public void MeatPage(ActionEvent event) {
+	public void PharmacyPage(ActionEvent event) {
 
-		ScreenController.goToMeatPage(event);
+		ScreenController.goToPharmacyPage(event);
 	}
 
 	@FXML

@@ -69,7 +69,7 @@ public class CartController extends ProductBaseController implements Initializab
 		productId.setCellValueFactory(new PropertyValueFactory<CartItem, String>("productId"));
 		productName.setCellValueFactory(new PropertyValueFactory<CartItem, String>("productName"));
 		price.setCellValueFactory(new PropertyValueFactory<CartItem, Double>("price"));
-		quantity.setCellValueFactory(new PropertyValueFactory<CartItem, Integer>("quantity"));
+		quantity.setCellValueFactory(new PropertyValueFactory<CartItem, Integer>("qty"));
 		totalValueItem.setCellValueFactory(new PropertyValueFactory<CartItem, String>("totalValueItem"));
 		tableCart.setItems(list);
 		for (CartItem p : list) {
