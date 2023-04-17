@@ -1,16 +1,13 @@
 package controller;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import controller.OrderExpensesController.SortItems;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
@@ -18,73 +15,79 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import model.DatabaseConnector;
+import model.Expense;
 
 public class OrderExpensesController extends ProductBaseController {
 
-	@FXML
-	BarChart barChart;
+    @FXML
+    private BarChart<String, Number> barChart;
 
-	@FXML
-	private CategoryAxis xAxis;
-	@FXML
-	private NumberAxis yAxis;
+    @FXML
+    private CategoryAxis xAxis;
 
-	@FXML
-	void goToCatalog(ActionEvent event) {
-		ScreenController.goToCatalogPage(event);
-	}
+    @FXML
+    private NumberAxis yAxis;
 
-	@Override
-	public void initialize() {
-		// Fetch the user order information from the Database and calculate the purchase
-		// value for each ordered date and store in the Hashmap
-		Map<String, Double> orderHistory = new HashMap<String, Double>();
-		List<String> dateofHistory = new ArrayList<String>();
-		try {
-			Connection conn = DatabaseConnector.getInstance();
-			Statement stmt = conn.createStatement();
-			String query = "select purchasedPrice, order_timestamp from user_order_history where user_name = '" + userId
-					+ "'";
-			ResultSet restSet = stmt.executeQuery(query);
-			while (restSet.next()) {
-				if (orderHistory.containsKey(restSet.getString(2))) {
-					orderHistory.put(restSet.getString(2),
-							orderHistory.get(restSet.getString(2)) + Double.valueOf(restSet.getString(1)));
-				} else {
-					orderHistory.put(restSet.getString(2), Double.valueOf(restSet.getString(1)));
-					dateofHistory.add(restSet.getString(2));
-				}
+    public void goToCatalog(ActionEvent event) {
+        ScreenController.goToCatalogPage(event);
+    }
 
-			}
-			restSet.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+    @FXML
+    protected void initialize() {
+        List<Expense> expenses = fetchOrderHistory();
+        populateBarChart(expenses);
+    }
 
-		// Sort the List as per the date in the ascending order
-		Collections.sort(dateofHistory, new SortItems());
+    private List<Expense> fetchOrderHistory() {
+        List<Expense> expenses = new ArrayList<>();
+        try {
+        	Connection conn = DatabaseConnector.getInstance();
+            PreparedStatement stmt = conn.prepareStatement(
+                     "SELECT purchasedPrice, order_timestamp FROM user_order_history WHERE user_name = ?");
+         
+            stmt.setString(1, userId);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                double price = rs.getDouble("purchasedPrice");
+                String date = rs.getString("order_timestamp");
+                Expense expense = new Expense(date, price);
+                expenses.add(expense);
+            }
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return expenses;
+    }
 
-		XYChart.Series series1 = new XYChart.Series();
-		for (String s : dateofHistory) {
-			series1.getData().add(new XYChart.Data(s, orderHistory.get(s)));
-		}
+    private void populateBarChart(List<Expense> expenses) {
+        List<String> dates = new ArrayList<>();
+        for (Expense expense : expenses) {
+            dates.add(expense.getDate());
+        }
+        Collections.sort(dates);
+        List<Expense> expensesByDate = new ArrayList<>();
+        for (String date : dates) {
+            double total = 0;
+            for (Expense expense : expenses) {
+                if (expense.getDate().equals(date)) {
+                    total += expense.getPrice();
+                }
+            }
+            Expense expense = new Expense(date, total);
+            expensesByDate.add(expense);
+        }
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        for (Expense expense : expensesByDate) {
+            series.getData().add(new XYChart.Data<>(expense.getDate(), expense.getPrice()));
+        }
+        barChart.getData().add(series);
+        barChart.setLegendVisible(false);
+    }
 
-		barChart.getData().addAll(series1);
-		barChart.setLegendVisible(false);
-
-	}
-
-	class SortItems implements Comparator<String> {
-
-		// Method of this class
-		// @Override
-		public int compare(String a, String b) {
-
-			// Returning the value after comparing the objects
-			// this will sort the data in Ascending order
-			return a.compareTo(b);
-		}
-	}
-
-
+    @Override
+    public void logOff() {
+        super.logOff();
+        barChart.getData().clear();
+    }
 }
