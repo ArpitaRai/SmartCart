@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DairyController">
+	<children>
+      <GridPane alignment="TOP_CENTER" layoutX="-1.0" layoutY="51.0" prefHeight="599.0" prefWidth="591.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="60.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="190.0" minHeight="10.0" prefHeight="190.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="219.0" minHeight="10.0" prefHeight="207.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="275.0" minHeight="10.0" prefHeight="217.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="78.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Milk.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Milk" />
+                  <Label fx:id="lblMilkPrice" text="Price" />
+                  <Spinner fx:id="spinMilk" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnMilk" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <ImageView fitHeight="92.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Butter.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Butter" />
+                  <Label fx:id="lblButterPrice" text="Price" />
+                  <Spinner fx:id="spinButter" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnButter" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="86.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <ImageView fitHeight="93.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Cream.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Heavy Cream" />
+                  <Label fx:id="lblHeavyCream" text="Price" />
+                  <Spinner fx:id="spinHeavyCream" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnHeavyCream" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/IceCream.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Ice Cream" />
+                  <Label fx:id="lblIceCreamPrice" text="Price" />
+                  <Spinner fx:id="spinIceCream" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnIceCream" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ChocolateMilk.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Chocolate Milk" />
+                  <Label fx:id="lblChocolateMilkPrice" text="Price" />
+                  <Spinner fx:id="spinChocolateMilk" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnChocolateMilk" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="110.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/SourCream.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Cottage Cheese" />
+                  <Label fx:id="lblCottageCheesePrice" text="Price" />
+                  <Spinner fx:id="spinCottageCheese" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnCottageCheese" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="103.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/StringCheese.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="String Cheese" />
+                  <Label fx:id="lblStringCheesePrice" text="Price" />
+                  <Spinner fx:id="spinStringCheese" prefHeight="26.0" prefWidth="76.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnStringCheese" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="105.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/MozzarellaCheese.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Mozzarella Cheese" />
+                  <Label fx:id="lblMozzarellaCheesePrice" text="Price" />
+                  <Spinner fx:id="spinMozzarellaCheese" prefHeight="23.0" prefWidth="74.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnMozzarellaCheese" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="108.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Yogurt.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Yogurt" />
+                  <Label fx:id="lblYogurtPrice" text="Price" />
+                  <Spinner fx:id="spinYogurt" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnYogurt" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+      <Button layoutX="801.0" layoutY="11.0" mnemonicParsing="false" onAction="#goToCart" prefHeight="26.0" prefWidth="75.0" text="Go To Cart">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Button layoutX="725.0" layoutY="11.0" mnemonicParsing="false" onAction="#backToCatalog" prefHeight="26.0" prefWidth="72.0" text="Back">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Button layoutX="46.0" layoutY="11.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="26.0" prefWidth="65.0" text="Logout" />
+   </children>
+</AnchorPane>

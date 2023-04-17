@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="802.0" prefWidth="1192.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DrinksController">
+	<children>
+      <ImageView fitHeight="802.0" fitWidth="1192.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/SuperMarket.jpeg" />
+         </image>
+      </ImageView>
+      <GridPane alignment="TOP_CENTER" layoutX="-1.0" layoutY="51.0" prefHeight="599.0" prefWidth="591.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="60.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="190.0" minHeight="10.0" prefHeight="190.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="219.0" minHeight="10.0" prefHeight="207.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="275.0" minHeight="10.0" prefHeight="217.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="84.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Water.jpeg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Label text="Water" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font></Label>
+                  <Label fx:id="lblWaterPrice" text="Price" />
+                  <Spinner fx:id="spinWater" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnWater" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <ImageView fitHeight="92.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/DietCoke.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Diet Coke" />
+                  <Label fx:id="lblDietCokePrice" text="Price" />
+                  <Spinner fx:id="spinDietCoke" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnDietCoke" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="86.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <ImageView fitHeight="93.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Sprite.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="KoolAid" />
+                  <Label fx:id="lblSpritePrice" text="Price" />
+                  <Spinner fx:id="spinSprite" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnSprite" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/FruitPunch.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="FruitPunch" />
+                  <Label fx:id="lblFruitPunchPrice" text="Price" />
+                  <Spinner fx:id="spinFruitPunch" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnFruitPunch" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/MountainDew.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Mountain Dew" />
+                  <Label fx:id="lblMountainDewPrice" text="Price" />
+                  <Spinner fx:id="spinMountainDew" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnMountainDew" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fitHeight="110.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/OrangeJuice.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="OrangeJuice" />
+                  <Label fx:id="lblOrangeJuicePrice" text="Price" />
+                  <Spinner fx:id="spinOrangeJuice" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnOrangeJuice" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="103.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pepsi.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Pepsi" />
+                  <Label fx:id="lblPepsiPrice" text="Price" />
+                  <Spinner fx:id="spinPepsi" prefHeight="26.0" prefWidth="76.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnPepsi" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="105.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/RedBull.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Red Bull" />
+                  <Label fx:id="lblRedBullPrice" text="Price" />
+                  <Spinner fx:id="spinRedBull" prefHeight="23.0" prefWidth="74.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnRedBull" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="108.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/DunkinCoffee.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label text="Dunkin Coffee" />
+                  <Label fx:id="lblDunkinCoffeePrice" text="Price" />
+                  <Spinner fx:id="spinDunkinCoffee" prefHeight="13.0" prefWidth="88.0">
+                     <VBox.margin>
+                        <Insets bottom="2.0" />
+                     </VBox.margin></Spinner>
+                  <Button fx:id="btnDunkinCoffee" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                     <VBox.margin>
+                        <Insets top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+      <Button layoutX="1089.0" layoutY="11.0" mnemonicParsing="false" onAction="#goToCart" prefHeight="26.0" prefWidth="89.0" text="Go To Cart">
+         <font>
+            <Font size="11.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="SHOPPING_CART" />
+         </graphic></Button>
+      <Button layoutX="1011.0" layoutY="11.0" mnemonicParsing="false" onAction="#backToCatalog" prefHeight="26.0" prefWidth="60.0" text="Back">
+         <font>
+            <Font size="11.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="ARROW_LEFT" />
+         </graphic></Button>
+      <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="26.0" prefWidth="79.0" text="Logout">
+         <graphic>
+            <FontAwesomeIconView glyphName="SIGN_OUT" />
+         </graphic></Button>
+   </children>
+
+</AnchorPane>

@@ -35,7 +35,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="DiaryButton" contentDisplay="TOP" layoutX="213.0" layoutY="495.0" mnemonicParsing="false" onAction="#DairyPage" prefHeight="150.0" prefWidth="218.0" text="Dairy">
+      <Button fx:id="DairyButton" contentDisplay="TOP" layoutX="213.0" layoutY="495.0" mnemonicParsing="false" onAction="#DairyPage" prefHeight="150.0" prefWidth="218.0" text="Dairy">
          <graphic>
             <ImageView fitHeight="120.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
