@@ -86,8 +86,8 @@ public class OrderExpensesController extends ProductBaseController {
     }
 
     @Override
-    public void logOff() {
-        super.logOff();
+    public void logOut() {
+        super.logOut();
         barChart.getData().clear();
     }
 }

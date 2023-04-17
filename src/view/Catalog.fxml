@@ -52,7 +52,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="MeatButton" contentDisplay="TOP" layoutX="432.0" layoutY="321.0" mnemonicParsing="false" onAction="#MeatPage" prefHeight="150.0" prefWidth="218.0" text="Meat">
+      <Button fx:id="PharmacyButton" contentDisplay="TOP" layoutX="432.0" layoutY="321.0" mnemonicParsing="false" onAction="#PharmacyPage" prefHeight="150.0" prefWidth="218.0" text="Pharmacy">
          <graphic>
             <ImageView fitHeight="120.0" fitWidth="200.0" pickOnBounds="true">
                <image>

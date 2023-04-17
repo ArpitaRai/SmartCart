@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,8 +13,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="802.0" prefWidth="1192.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DrinksController">
-	<children>
+<AnchorPane prefHeight="802.0" prefWidth="1192.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PharmacyController">
+   <children>
       <ImageView fitHeight="802.0" fitWidth="1192.0" pickOnBounds="true">
          <image>
             <Image url="@../images/SuperMarket.jpeg" />
@@ -36,24 +34,18 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="84.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="84.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/Water.jpeg" />
+                        <Image url="@../images/BandAid.jpeg" />
                      </image>
-                     <effect>
-                        <DropShadow />
-                     </effect>
                   </ImageView>
-                  <Label text="Water" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font></Label>
-                  <Label fx:id="lblWaterPrice" text="Price" />
-                  <Spinner fx:id="spinWater" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="BandAid" />
+                  <Label fx:id="lblBandAidPrice" text="Price" />
+                  <Spinner fx:id="spinBandAid" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnWater" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnBandAid" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -66,16 +58,16 @@
                <children>
                   <ImageView fitHeight="92.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/DietCoke.jpeg" />
+                        <Image url="@../images/Advil.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="Diet Coke" />
-                  <Label fx:id="lblDietCokePrice" text="Price" />
-                  <Spinner fx:id="spinDietCoke" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="Advil" />
+                  <Label fx:id="lblAdvilPrice" text="Price" />
+                  <Spinner fx:id="spinAdvil" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnDietCoke" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnAdvil" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -88,16 +80,16 @@
                <children>
                   <ImageView fitHeight="93.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/Sprite.jpeg" />
+                        <Image url="@../images/Paracetamol.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="KoolAid" />
-                  <Label fx:id="lblSpritePrice" text="Price" />
-                  <Spinner fx:id="spinSprite" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="Paracetamol" />
+                  <Label fx:id="lblParacetamolPrice" text="Price" />
+                  <Spinner fx:id="spinParacetamol" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnSprite" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnParacetamol" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -110,16 +102,16 @@
                <children>
                   <ImageView fitHeight="109.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/FruitPunch.jpeg" />
+                        <Image url="@../images/Vicks.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="FruitPunch" />
-                  <Label fx:id="lblFruitPunchPrice" text="Price" />
-                  <Spinner fx:id="spinFruitPunch" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="Vicks" />
+                  <Label fx:id="lblVicksPrice" text="Price" />
+                  <Spinner fx:id="spinVicks" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnFruitPunch" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnVicks" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -132,16 +124,16 @@
                <children>
                   <ImageView fitHeight="109.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/MountainDew.jpeg" />
+                        <Image url="@../images/Antacid.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="Mountain Dew" />
-                  <Label fx:id="lblMountainDewPrice" text="Price" />
-                  <Spinner fx:id="spinMountainDew" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="Antacid" />
+                  <Label fx:id="lblAntacidPrice" text="Price" />
+                  <Spinner fx:id="spinAntacid" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnMountainDew" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnAntacid" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -152,18 +144,18 @@
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <ImageView fitHeight="110.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="142.0" fitWidth="187.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/OrangeJuice.jpeg" />
+                        <Image url="@../images/Antibiotic.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="OrangeJuice" />
-                  <Label fx:id="lblOrangeJuicePrice" text="Price" />
-                  <Spinner fx:id="spinOrangeJuice" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="Antibiotic" />
+                  <Label fx:id="lblAntibioticPrice" text="Price" />
+                  <Spinner fx:id="spinAntibiotic" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnOrangeJuice" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnAntibiotic" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -176,16 +168,16 @@
                <children>
                   <ImageView fitHeight="103.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/pepsi.jpeg" />
+                        <Image url="@../images/Vaseline.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="Pepsi" />
-                  <Label fx:id="lblPepsiPrice" text="Price" />
-                  <Spinner fx:id="spinPepsi" prefHeight="26.0" prefWidth="76.0">
+                  <Label text="Vaseline" />
+                  <Label fx:id="lblVaselinePrice" text="Price" />
+                  <Spinner fx:id="spinVaseline" prefHeight="26.0" prefWidth="76.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnPepsi" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnVaseline" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -198,16 +190,16 @@
                <children>
                   <ImageView fitHeight="105.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/RedBull.jpeg" />
+                        <Image url="@../images/Benadryl.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="Red Bull" />
-                  <Label fx:id="lblRedBullPrice" text="Price" />
-                  <Spinner fx:id="spinRedBull" prefHeight="23.0" prefWidth="74.0">
+                  <Label text="Benadryl" />
+                  <Label fx:id="lblBenadrylPrice" text="Price" />
+                  <Spinner fx:id="spinBenadryl" prefHeight="23.0" prefWidth="74.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnRedBull" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnBenadryl" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -220,16 +212,16 @@
                <children>
                   <ImageView fitHeight="108.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/DunkinCoffee.jpeg" />
+                        <Image url="@../images/NasalSpray.jpg" />
                      </image>
                   </ImageView>
-                  <Label text="Dunkin Coffee" />
-                  <Label fx:id="lblDunkinCoffeePrice" text="Price" />
-                  <Spinner fx:id="spinDunkinCoffee" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="NasalSpray" />
+                  <Label fx:id="lblNasalSprayPrice" text="Price" />
+                  <Spinner fx:id="spinNasalSpray" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnDunkinCoffee" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnNasalSpray" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -240,18 +232,14 @@
             </VBox>
          </children>
       </GridPane>
-      <Button layoutX="1089.0" layoutY="11.0" mnemonicParsing="false" onAction="#goToCart" prefHeight="26.0" prefWidth="89.0" text="Go To Cart">
+      <Button layoutX="1090.0" layoutY="11.0" mnemonicParsing="false" onAction="#goToCart" prefHeight="26.0" prefWidth="88.0" text="Go To Cart">
          <font>
-            <Font size="11.0" />
+            <Font size="12.0" />
          </font>
          </Button>
-      <Button layoutX="1011.0" layoutY="11.0" mnemonicParsing="false" onAction="#backToCatalog" prefHeight="26.0" prefWidth="60.0" text="Back">
-         <font>
-            <Font size="11.0" />
-         </font>
+      <Button layoutX="1001.0" layoutY="11.0" mnemonicParsing="false" onAction="#backToCatalog" prefHeight="26.0" prefWidth="74.0" text="Back">
          </Button>
-      <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="26.0" prefWidth="79.0" text="Logout">
+      <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="26.0" prefWidth="88.0" text="Logout">
          </Button>
    </children>
-
 </AnchorPane>
