@@ -100,58 +100,58 @@ public class FruitsController extends ProductBaseController {
 		lblWatermelonPrice.setText("$" + inventoryItems.get("FRU009").getPrice() + "/ct");
 
 		spinApple.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU001").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU001").getQty(), 0));
 
 		spinAvocado.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU002").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU002").getQty(), 0));
 
 		spinBanana.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU003").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU003").getQty(), 0));
 
 		spinBlueberries.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU004").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU004").getQty(), 0));
 
 		spinGuava.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU005").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU005").getQty(), 0));
 
 		spinOrange.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU006").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU006").getQty(), 0));
 
 		spinPlum.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU007").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU007").getQty(), 0));
 
 		spinStrawberries.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU008").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU008").getQty(), 0));
 
 		spinWatermelon.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU009").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("FRU009").getQty(), 0));
 		
 		
-		if(inventoryItems.get("FRU001").getQuantity() == 0) {
+		if(inventoryItems.get("FRU001").getQty() == 0) {
 			setOutOfStockField(lblApplePrice, spinApple, btnApple);
 		}
-		if(inventoryItems.get("FRU002").getQuantity() == 0) {
+		if(inventoryItems.get("FRU002").getQty() == 0) {
 			setOutOfStockField(lblAvocadoPrice, spinAvocado, btnAvocado);
 		}
-		if(inventoryItems.get("FRU003").getQuantity() == 0) {
+		if(inventoryItems.get("FRU003").getQty() == 0) {
 			setOutOfStockField(lblBananaPrice, spinBanana, btnBanana);
 		}
-		if(inventoryItems.get("FRU004").getQuantity() == 0) {
+		if(inventoryItems.get("FRU004").getQty() == 0) {
 			setOutOfStockField(lblBlueberriesPrice, spinBlueberries, btnBlueberries);
 		}
-		if(inventoryItems.get("FRU005").getQuantity() == 0) {
+		if(inventoryItems.get("FRU005").getQty() == 0) {
 			setOutOfStockField(lblGuavaPrice, spinGuava, btnGuava);
 		}
-		if(inventoryItems.get("FRU006").getQuantity() == 0) {
+		if(inventoryItems.get("FRU006").getQty() == 0) {
 			setOutOfStockField(lblOrangePrice,spinOrange, btnOrange);
 		}
-		if(inventoryItems.get("FRU007").getQuantity() == 0) {
+		if(inventoryItems.get("FRU007").getQty() == 0) {
 			setOutOfStockField(lblPlumPrice, spinPlum, btnPlum);
 		}
-		if(inventoryItems.get("FRU008").getQuantity() == 0) {
+		if(inventoryItems.get("FRU008").getQty() == 0) {
 			setOutOfStockField(lblStrawberriesPrice, spinStrawberries, btnStrawberries);
 		}
-		if(inventoryItems.get("FRU009").getQuantity() == 0) {
+		if(inventoryItems.get("FRU009").getQty() == 0) {
 			setOutOfStockField(lblWatermelonPrice, spinWatermelon, btnWatermelon);
 		}
 		
@@ -252,7 +252,7 @@ public class FruitsController extends ProductBaseController {
 	// Logout of the application and return to the Login Page
 	@FXML
     void goToLogin(ActionEvent event) {
-    	logOff();
+    	logOut();
     	ScreenController.goToLoginPage(event);
     }
 	

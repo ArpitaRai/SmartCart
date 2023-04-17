@@ -23,7 +23,7 @@ public abstract class ProductBaseController {
 			abstract void initialize();
 			
 			// Logoff method to clear the Hashmaps and inventory lists on clicking LogOff button from any screen
-			public void logOUt() {
+			public void logOut() {
 				cart.clearCart();
 				inventoryItems.clear();
 			}

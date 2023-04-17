@@ -69,10 +69,10 @@ public class CartController {
 		productName.setCellValueFactory(new PropertyValueFactory<CartItem, String>("productName"));
 		price.setCellValueFactory(new PropertyValueFactory<CartItem, Double>("price"));
 		quantity.setCellValueFactory(new PropertyValueFactory<CartItem, Integer>("quantity"));
-		lbltotalValueItem.setCellValueFactory(new PropertyValueFactory<CartItem, String>("totalValueItem"));
+		totalValueItem.setCellValueFactory(new PropertyValueFactory<CartItem, String>("totalValueItem"));
 		tableCart.setItems(list);
 		for (CartItem p : list) {
-			totalCartValue += (double) p.getQuantity() * p.getPrice();
+			totalCartValue += (double) p.getQty() * p.getPrice();
 		}
 		lbltotalValue.setText("Total Cart Value: $" + String.format("%.2f", totalCartValue));
 	}

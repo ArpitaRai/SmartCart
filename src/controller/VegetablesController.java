@@ -27,7 +27,7 @@ public class VegetablesController extends ProductBaseController {
 	@FXML
 	Label lblPotatoesPrice;
 	@FXML
-	Label lblScallionsPrice;
+	Label lblBroccoliPrice;
 	@FXML
 	Label lblSpinachPrice;
 	@FXML
@@ -46,7 +46,7 @@ public class VegetablesController extends ProductBaseController {
 	@FXML
 	Spinner<Integer> spinPotatoes;
 	@FXML
-	Spinner<Integer> spinScallions;
+	Spinner<Integer> spinBroccoli;
 	@FXML
 	Spinner<Integer> spinSpinach;
 	@FXML
@@ -65,7 +65,7 @@ public class VegetablesController extends ProductBaseController {
 	@FXML
 	Button btnPotatoes;
 	@FXML
-	Button btnScallions;
+	Button btnBroccoli;
 	@FXML
 	Button btnSpinach;
 	@FXML
@@ -91,62 +91,62 @@ public class VegetablesController extends ProductBaseController {
 		lblMushroomsPrice.setText("$" + inventoryItems.get("VEG004").getPrice() + "/lb");
 		lblOnionsPrice.setText("$" + inventoryItems.get("VEG005").getPrice() + "/lb");
 		lblPotatoesPrice.setText("$" + inventoryItems.get("VEG006").getPrice() + "/lb");
-		lblScallionsPrice.setText("$" + inventoryItems.get("VEG007").getPrice() + "/lb");
+		lblBroccoliPrice.setText("$" + inventoryItems.get("VEG007").getPrice() + "/lb");
 		lblSpinachPrice.setText("$" + inventoryItems.get("VEG008").getPrice() + "/bunch");
 		lblTomatoesPrice.setText("$" + inventoryItems.get("VEG009").getPrice() + "/lb");
 
 		spinBellPepper.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG001").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG001").getQty(), 0));
 
 		spinCarrot.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG002").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG002").getQty(), 0));
 
 		spinCauliflower.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG003").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG003").getQty(), 0));
 
 		spinMushrooms.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG004").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG004").getQty(), 0));
 
 		spinOnions.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG005").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG005").getQty(), 0));
 
 		spinPotatoes.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG006").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG006").getQty(), 0));
 
-		spinScallions.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG007").getQuantity(), 0));
+		spinBroccoli.setValueFactory(
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG007").getQty(), 0));
 
 		spinSpinach.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG008").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG008").getQty(), 0));
 
 		spinTomatoes.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG009").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("VEG009").getQty(), 0));
 
-		if (inventoryItems.get("VEG001").getQuantity() == 0) {
+		if (inventoryItems.get("VEG001").getQty() == 0) {
 			setOutOfStockField(lblBellPepperPrice, spinBellPepper, btnBellPepper);
 		}
-		if (inventoryItems.get("VEG002").getQuantity() == 0) {
+		if (inventoryItems.get("VEG002").getQty() == 0) {
 			setOutOfStockField(lblCarrotPrice, spinCarrot, btnCarrot);
 		}
-		if (inventoryItems.get("VEG003").getQuantity() == 0) {
+		if (inventoryItems.get("VEG003").getQty() == 0) {
 			setOutOfStockField(lblCauliflowerPrice, spinCauliflower, btnCauliflower);
 		}
-		if (inventoryItems.get("VEG004").getQuantity() == 0) {
+		if (inventoryItems.get("VEG004").getQty() == 0) {
 			setOutOfStockField(lblMushroomsPrice, spinMushrooms, btnMushrooms);
 		}
-		if (inventoryItems.get("VEG005").getQuantity() == 0) {
+		if (inventoryItems.get("VEG005").getQty() == 0) {
 			setOutOfStockField(lblOnionsPrice, spinOnions, btnOnions);
 		}
-		if (inventoryItems.get("VEG006").getQuantity() == 0) {
+		if (inventoryItems.get("VEG006").getQty() == 0) {
 			setOutOfStockField(lblPotatoesPrice, spinPotatoes, btnPotatoes);
 		}
-		if (inventoryItems.get("VEG007").getQuantity() == 0) {
-			setOutOfStockField(lblScallionsPrice, spinScallions, btnScallions);
+		if (inventoryItems.get("VEG007").getQty() == 0) {
+			setOutOfStockField(lblBroccoliPrice, spinBroccoli, btnBroccoli);
 		}
-		if (inventoryItems.get("VEG008").getQuantity() == 0) {
+		if (inventoryItems.get("VEG008").getQty() == 0) {
 			setOutOfStockField(lblSpinachPrice, spinSpinach, btnSpinach);
 		}
-		if (inventoryItems.get("VEG009").getQuantity() == 0) {
+		if (inventoryItems.get("VEG009").getQty() == 0) {
 			setOutOfStockField(lblTomatoesPrice, spinTomatoes, btnTomatoes);
 		}
 
@@ -203,9 +203,9 @@ public class VegetablesController extends ProductBaseController {
 
 		}
 
-		if (((Button) event.getTarget()).getId().toString().equals("btnScallions")) {
+		if (((Button) event.getTarget()).getId().toString().equals("btnBroccoli")) {
 			CartItem ci = new CartItem("VEG007", inventoryItems.get("VEG007").getProductName(),
-					(Integer) spinScallions.getValue(), inventoryItems.get("VEG007").getPrice());
+					(Integer) spinBroccoli.getValue(), inventoryItems.get("VEG007").getPrice());
 
 			cart.addProduct(ci);
 
@@ -244,7 +244,7 @@ public class VegetablesController extends ProductBaseController {
 	// Logout of the application and return to the Login Page
 	@FXML
 	void goToLogin(ActionEvent event) {
-		logOff();
+		logOut();
 		ScreenController.goToLoginPage(event);
 	}
 

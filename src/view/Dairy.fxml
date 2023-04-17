@@ -144,13 +144,13 @@
                         <Image url="@../images/SourCream.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="Sour Cream" />
-                  <Label fx:id="sourCreamPrice" text="Price" />
-                  <Spinner fx:id="spinSourCream" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="Cottage Cheese" />
+                  <Label fx:id="lblCottageCheesePrice" text="Price" />
+                  <Spinner fx:id="spinCottageCheese" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnSourCream" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnCottageCheese" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -189,7 +189,7 @@
                      </image>
                   </ImageView>
                   <Label text="Mozzarella Cheese" />
-                  <Label fx:id="lblMozzarellaCheese" text="Price" />
+                  <Label fx:id="lblMozzarellaCheesePrice" text="Price" />
                   <Spinner fx:id="spinMozzarellaCheese" prefHeight="23.0" prefWidth="74.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />

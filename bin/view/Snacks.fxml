@@ -34,13 +34,13 @@
                         <Image url="@../images/BlueberryBar.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="Blueberry Bar" />
-                  <Label fx:id="lblBlueberryBarPrice" text="Price" />
-                  <Spinner fx:id="spinBlueberryBar" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="Protein Bar" />
+                  <Label fx:id="lblProteinBarPrice" text="Price" />
+                  <Spinner fx:id="spinProteinBar" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnBlueberryBar" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnProteinBar" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -145,7 +145,7 @@
                      </image>
                   </ImageView>
                   <Label text="Popcorn" />
-                  <Label fx:id="btnPopcornPrice" text="Price" />
+                  <Label fx:id="lblPopcornPrice" text="Price" />
                   <Spinner fx:id="spinPopcorn" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
@@ -210,13 +210,13 @@
                         <Image url="@../images/TrailMix.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="Trail Mix" />
-                  <Label fx:id="lblTrailPrice" text="Price" />
-                  <Spinner fx:id="spinTrail" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="Doritos" />
+                  <Label fx:id="lblDoritosPrice" text="Price" />
+                  <Spinner fx:id="spinDoritos" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnTrail" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnDoritos" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>

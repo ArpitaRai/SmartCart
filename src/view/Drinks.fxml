@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-image: url('images/SuperMarketImage.jpeg'); -fx-background-repeat: no-repeat; -fx-background-position: center center; -fx-background-size: cover;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BeveragesController">
+<AnchorPane style="-fx-background-image: url('images/SuperMarketImage.jpeg'); -fx-background-repeat: no-repeat; -fx-background-position: center center; -fx-background-size: cover;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DrinksController">
 	<children>
       <ImageView fitHeight="681.0" fitWidth="791.0" pickOnBounds="true">
          <image>
@@ -91,12 +91,12 @@
                      </image>
                   </ImageView>
                   <Label text="KoolAid" />
-                  <Label fx:id="lblKoolAidPrice" text="Price" />
-                  <Spinner fx:id="spinKoolAid" prefHeight="13.0" prefWidth="88.0">
+                  <Label fx:id="lblSpritePrice" text="Price" />
+                  <Spinner fx:id="spinSprite" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnKoolAid" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnSprite" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -134,13 +134,13 @@
                         <Image url="@../images/Gatorade.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="Gatorade" />
-                  <Label fx:id="lblGatoradePrice" text="Price" />
-                  <Spinner fx:id="spinGatorade" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="Mountain Dew" />
+                  <Label fx:id="lblMountainDewPrice" text="Price" />
+                  <Spinner fx:id="spinMountainDew" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnGatorade" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnMountainDew" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>
@@ -222,13 +222,13 @@
                         <Image url="@../images/Seltzer.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="Seltzer" />
-                  <Label fx:id="lblSeltzerPrice" text="Price" />
-                  <Spinner fx:id="spinSeltzer" prefHeight="13.0" prefWidth="88.0">
+                  <Label text="Dunkin Coffee" />
+                  <Label fx:id="lblDunkinCoffeePrice" text="Price" />
+                  <Spinner fx:id="spinDunkinCoffee" prefHeight="13.0" prefWidth="88.0">
                      <VBox.margin>
                         <Insets bottom="2.0" />
                      </VBox.margin></Spinner>
-                  <Button fx:id="btnSeltzer" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
+                  <Button fx:id="btnDunkinCoffee" mnemonicParsing="false" onAction="#addToCart" prefHeight="22.0" prefWidth="68.0" text="Add to Cart">
                      <VBox.margin>
                         <Insets top="2.0" />
                      </VBox.margin>

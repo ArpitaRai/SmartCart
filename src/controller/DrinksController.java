@@ -13,41 +13,41 @@ import model.CartItem;
 import model.DatabaseConnector;
 import model.Product;
 
-public class BeveragesController extends ProductBaseController {
+public class DrinksController extends ProductBaseController {
 	@FXML Label lblWaterPrice;
-	@FXML Label lblCelsiusPrice;
-	@FXML Label lblKoolAidPrice;
+	@FXML Label lblDietCokePrice;
+	@FXML Label lblSpritePrice;
 	@FXML Label lblFruitPunchPrice;
-	@FXML Label lblGatoradePrice;
+	@FXML Label lblMountainDewPrice;
 	@FXML Label lblOrangeJuicePrice;
 	@FXML Label lblPepsiPrice;
 	@FXML Label lblRedBullPrice;
-	@FXML Label lblSeltzerPrice;
+	@FXML Label lblDunkinCoffeePrice;
 
 	@FXML Spinner<Integer> spinWater;
-	@FXML Spinner<Integer> spinCelsius;
-	@FXML Spinner<Integer> spinKoolAid;
+	@FXML Spinner<Integer> spinDietCoke;
+	@FXML Spinner<Integer> spinSprite;
 	@FXML Spinner<Integer> spinFruitPunch;
-	@FXML Spinner<Integer> spinGatorade;
+	@FXML Spinner<Integer> spinMountainDew;
 	@FXML Spinner<Integer> spinOrangeJuice;
 	@FXML Spinner<Integer> spinPepsi;
 	@FXML Spinner<Integer> spinRedBull;
-	@FXML Spinner<Integer> spinSeltzer;
+	@FXML Spinner<Integer> spinDunkinCoffee;
 
 	@FXML Button btnWater;
-	@FXML Button btnCelsius;
-	@FXML Button btnKoolAid;
+	@FXML Button btnDietCoke;
+	@FXML Button btnSprite;
 	@FXML Button btnFruitPunch;
-	@FXML Button btnGatorade;
+	@FXML Button btnMountainDew;
 	@FXML Button btnOrangeJuice;
 	@FXML Button btnPepsi;
 	@FXML Button btnRedBull;
-	@FXML Button btnSeltzer;
+	@FXML Button btnDunkinCoffee;
 
 	public void initialize() {
 //		Fetch the Beverages Products information from the Beverages catalog in the Database
 		try {
-			ResultSet rs = DatabaseConnector.getItemsFromCatalog("Beverages");
+			ResultSet rs = DatabaseConnector.getItemsFromCatalog("Drinks");
 			while (rs.next()) {
 				inventoryItems.put(rs.getString(1),
 						new Product(rs.getString(1), rs.getString(2), rs.getInt(4), rs.getDouble(3), rs.getString(5)));
@@ -58,68 +58,68 @@ public class BeveragesController extends ProductBaseController {
 		}
 
 		lblWaterPrice.setText("$" + inventoryItems.get("BEV001").getPrice());
-		lblCelsiusPrice.setText("$" + inventoryItems.get("BEV002").getPrice());
-		lblKoolAidPrice.setText("$" + inventoryItems.get("BEV003").getPrice());
+		lblDietCokePrice.setText("$" + inventoryItems.get("BEV002").getPrice());
+		lblSpritePrice.setText("$" + inventoryItems.get("BEV003").getPrice());
 		lblFruitPunchPrice.setText("$" + inventoryItems.get("BEV004").getPrice());
-		lblGatoradePrice.setText("$" + inventoryItems.get("BEV005").getPrice());
+		lblMountainDewPrice.setText("$" + inventoryItems.get("BEV005").getPrice());
 		lblOrangeJuicePrice.setText("$" + inventoryItems.get("BEV006").getPrice());
 		lblPepsiPrice.setText("$" + inventoryItems.get("BEV007").getPrice());
 		lblRedBullPrice.setText("$" + inventoryItems.get("BEV008").getPrice());
-		lblSeltzerPrice.setText("$" + inventoryItems.get("BEV009").getPrice());
+		lblDunkinCoffeePrice.setText("$" + inventoryItems.get("BEV009").getPrice());
 
 		spinWater.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV001").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV001").getQty(), 0));
 
-		spinCelsius.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV002").getQuantity(), 0));
+		spinDietCoke.setValueFactory(
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV002").getQty(), 0));
 
-		spinKoolAid.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV003").getQuantity(), 0));
+		spinSprite.setValueFactory(
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV003").getQty(), 0));
 
 		spinFruitPunch.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV004").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV004").getQty(), 0));
 
-		spinGatorade.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV005").getQuantity(), 0));
+		spinMountainDew.setValueFactory(
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV005").getQty(), 0));
 
 		spinOrangeJuice.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV006").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV006").getQty(), 0));
 
 		spinPepsi.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV007").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV007").getQty(), 0));
 
 		spinRedBull.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV008").getQuantity(), 0));
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV008").getQty(), 0));
 
-		spinSeltzer.setValueFactory(
-				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV009").getQuantity(), 0));
+		spinDunkinCoffee.setValueFactory(
+				new SpinnerValueFactory.IntegerSpinnerValueFactory(0, inventoryItems.get("BEV009").getQty(), 0));
 		
-		if(inventoryItems.get("BEV001").getQuantity() == 0) {
+		if(inventoryItems.get("BEV001").getQty() == 0) {
 			setOutOfStockField(lblWaterPrice, spinWater, btnWater);
 		}
-		if(inventoryItems.get("BEV002").getQuantity() == 0) {
-			setOutOfStockField(lblCelsiusPrice, spinCelsius, btnCelsius);
+		if(inventoryItems.get("BEV002").getQty() == 0) {
+			setOutOfStockField(lblDietCokePrice, spinDietCoke, btnDietCoke);
 		}
-		if(inventoryItems.get("BEV003").getQuantity() == 0) {
-			setOutOfStockField(lblKoolAidPrice, spinKoolAid, btnKoolAid);
+		if(inventoryItems.get("BEV003").getQty() == 0) {
+			setOutOfStockField(lblSpritePrice, spinSprite, btnSprite);
 		}
-		if(inventoryItems.get("BEV004").getQuantity() == 0) {
+		if(inventoryItems.get("BEV004").getQty() == 0) {
 			setOutOfStockField(lblFruitPunchPrice, spinFruitPunch, btnFruitPunch);
 		}
-		if(inventoryItems.get("BEV005").getQuantity() == 0) {
-			setOutOfStockField(lblGatoradePrice, spinGatorade, btnGatorade);
+		if(inventoryItems.get("BEV005").getQty() == 0) {
+			setOutOfStockField(lblMountainDewPrice, spinMountainDew, btnMountainDew);
 		}
-		if(inventoryItems.get("BEV006").getQuantity() == 0) {
+		if(inventoryItems.get("BEV006").getQty() == 0) {
 			setOutOfStockField(lblOrangeJuicePrice, spinOrangeJuice, btnOrangeJuice);
 		}
-		if(inventoryItems.get("BEV007").getQuantity() == 0) {
+		if(inventoryItems.get("BEV007").getQty() == 0) {
 			setOutOfStockField(lblPepsiPrice, spinPepsi, btnPepsi);
 		}
-		if(inventoryItems.get("BEV008").getQuantity() == 0) {
+		if(inventoryItems.get("BEV008").getQty() == 0) {
 			setOutOfStockField(lblRedBullPrice, spinRedBull, btnRedBull);
 		}
-		if(inventoryItems.get("BEV009").getQuantity() == 0) {
-			setOutOfStockField(lblSeltzerPrice, spinSeltzer, btnSeltzer);
+		if(inventoryItems.get("BEV009").getQty() == 0) {
+			setOutOfStockField(lblDunkinCoffeePrice, spinDunkinCoffee, btnDunkinCoffee);
 		}
 
 	}
@@ -136,16 +136,16 @@ public class BeveragesController extends ProductBaseController {
 
 		}
 
-		if (((Button) event.getTarget()).getId().toString().equals("btnCelsius")) {
-			CartItem ci = new CartItem("BEV002", "Celsius", (Integer) spinCelsius.getValue(),
+		if (((Button) event.getTarget()).getId().toString().equals("btnDietCoke")) {
+			CartItem ci = new CartItem("BEV002", "Diet Coke", (Integer) spinDietCoke.getValue(),
 					inventoryItems.get("BEV002").getPrice());
 
 			cart.addProduct(ci);
 
 		}
 
-		if (((Button) event.getTarget()).getId().toString().equals("btnKoolAid")) {
-			CartItem ci = new CartItem("BEV003", "KoolAid", (Integer) spinKoolAid.getValue(),
+		if (((Button) event.getTarget()).getId().toString().equals("btnSprite")) {
+			CartItem ci = new CartItem("BEV003", "KoolAid", (Integer) spinSprite.getValue(),
 					inventoryItems.get("BEV003").getPrice());
 
 			cart.addProduct(ci);
@@ -160,8 +160,8 @@ public class BeveragesController extends ProductBaseController {
 
 		}
 
-		if (((Button) event.getTarget()).getId().toString().equals("btnGatorade")) {
-			CartItem ci = new CartItem("BEV005", "Gatorade", (Integer)spinGatorade.getValue(),
+		if (((Button) event.getTarget()).getId().toString().equals("btnMountainDew")) {
+			CartItem ci = new CartItem("BEV005", "Gatorade", (Integer)spinMountainDew.getValue(),
 					inventoryItems.get("BEV005").getPrice());
 
 			cart.addProduct(ci);
@@ -191,8 +191,8 @@ public class BeveragesController extends ProductBaseController {
 
 		}
 
-		if (((Button) event.getTarget()).getId().toString().equals("btnSeltzer")) {
-			CartItem ci = new CartItem("BEV009", "Seltzer", (Integer) spinSeltzer.getValue(),
+		if (((Button) event.getTarget()).getId().toString().equals("btnDunkinCoffee")) {
+			CartItem ci = new CartItem("BEV009", "Seltzer", (Integer) spinDunkinCoffee.getValue(),
 					inventoryItems.get("BEV009").getPrice());
 
 			cart.addProduct(ci);
@@ -218,7 +218,7 @@ public class BeveragesController extends ProductBaseController {
 	// Logout of the application and return to the Login Page
 	@FXML
 	void goToLogin(ActionEvent event) {
-		logOff();
+		logOut();
 		ScreenController.goToLoginPage(event);
 	}
 	
