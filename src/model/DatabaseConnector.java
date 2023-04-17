@@ -17,7 +17,7 @@ public class DatabaseConnector {
 		if (dbConnection == null) {
 			synchronized (DatabaseConnector.class) {
 				if (dbConnection == null) {
-					Class.forName("com.mysql.jdbc.Driver");
+					Class.forName("com.mysql.cj.jdbc.Driver");
 					dbConnection = DriverManager.getConnection(DatabaseConstants.url,
 							DatabaseConstants.username, DatabaseConstants.password);
 				}

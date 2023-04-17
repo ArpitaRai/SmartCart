@@ -166,7 +166,7 @@
                         <Image url="@../images/Scallions.jpeg" />
                      </image>
                   </ImageView>
-                  <Label text="Scallions" />
+                  <Label text="Broccoli" />
                   <Label fx:id="lblBroccoliPrice" text="Price" />
                   <Spinner fx:id="spinBroccoli" prefHeight="26.0" prefWidth="76.0">
                      <VBox.margin>
