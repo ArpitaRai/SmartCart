@@ -2,7 +2,6 @@ package controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.regex.Pattern;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,162 +12,213 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.paint.Color;
 import model.DatabaseConnector;
-import animatefx.animation.Shake;
+import java.util.regex.*;
 
 public class RegistrationController {
 
-    @FXML
-    private Button backToLogin;
+	@FXML
+	private Button backToLogin;
 
-    @FXML
-    private Button submit_button;
+	@FXML
+	private Button btnSubmit;
 
-    @FXML
-    private TextField contactField;
+	@FXML
+	private TextField tfContact;
 
-    @FXML
-    private TextField emailField;
+	@FXML
+	private TextField tfEmail;
 
-    @FXML
-    private TextField nameField;
+	@FXML
+	private TextField tfName;
 
-    @FXML
-    private TextField userIdField;
+	@FXML
+	private TextField tfUserId;
 
-    @FXML
-    private PasswordField passwordField;
+	@FXML
+	private PasswordField tfUserPassword;
 
-    @FXML
-    private PasswordField confirmPasswordField;
+	@FXML
+	private Label errorContact;
 
-    @FXML
-    private Label errorContact;
+	@FXML
+	private Label errorEmail;
 
-    @FXML
-    private Label errorEmail;
+	@FXML
+	private Label errorNameField;
 
-    @FXML
-    private Label errorName;
+	@FXML
+	private Label errorPassword;
 
-    @FXML
-    private Label errorPassword;
+	@FXML
+	private Label errorUserName;
 
-    @FXML
-    private Label errorUsername;
+	@FXML
+	private Label lblName;
+
+	@FXML
+	private Label lblContact;
+
+	@FXML
+	private Label lblEmail;
+
+	@FXML
+	private Label lblUserName;
+
+	@FXML
+	private Label lblPassword;
 
 
-    @FXML
-    void registerUser(ActionEvent event) {
-        clearStylesAndMaskLabels();
-        if (!validateNotEmpty(nameField, errorName, "Name should not be empty")) return;
-        if (!validateWithPattern(contactField, errorContact, "^\\d{10}$", "Phone number should be valid")) return;
-        if (!validateWithPattern(emailField, errorEmail, "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", "Please Enter valid Email")) return;
-        if (!validateNotEmpty(userIdField, errorUsername, "Username cannot be empty")) return;
-        if (!validateNotEmpty(passwordField, errorPassword, "Password cannot be empty")) return;
+	// Validate the name, contact, email, username and password fields to be valid before registration
+	// Registers user successfully in the Database if validations are successful
+	// Returns by Highlighting the invalid fields if validation fails
+	@FXML
+	void registerUser(ActionEvent event) {
+		// Clearing the Error Labels and disable the hightlights for error field 
+		clearFieldsStyle();
+		maskErrorLabels();
+		if (!isNameValid()) {
+			tfName.setStyle("-fx-border-color: red; -fx-border-width: 2px ;");
+			new animatefx.animation.Shake(tfName).play();
+			errorNameField.setVisible(true);
+			this.showDialog("Name should not be empty");
+			return;
+		}
+		if (!isContactValid()) {
+			tfContact.setStyle("-fx-border-color: red; -fx-border-width: 2px ;");
+			new animatefx.animation.Shake(tfContact).play();
+			errorContact.setVisible(true);
+			this.showDialog("Phone number should be valid");
+			return;
+		}
+		if (!isValidEmail()) {
+			tfEmail.setStyle("-fx-border-color: red; -fx-border-width: 2px ;");
+			new animatefx.animation.Shake(tfEmail).play();
+			errorEmail.setVisible(true);
+			this.showDialog("Please Enter valid Email");
+			return;
+		}
+		if (!isValidUsername()) {
+			tfUserId.setStyle("-fx-border-color: red; -fx-border-width: 2px ;");
+			new animatefx.animation.Shake(tfUserId).play();
+			errorUserName.setVisible(true);
+			this.showDialog("Username cannot be empty");
+			return;
+		}
+		if (!isValidPassword()) {
+			tfUserPassword.setStyle("-fx-border-color: red; -fx-border-width: 2px ;");
+			new animatefx.animation.Shake(tfUserPassword).play();
+			errorPassword.setVisible(true);
+			this.showDialog("Password cannot be empty");
+			return;
+		}
+		String query = "insert into user_info values (?,?,?,?,?)";
+		PreparedStatement preparedStmt;
+		try {
+			Connection conn = DatabaseConnector.getInstance();
+			preparedStmt = conn.prepareStatement(query);
+			preparedStmt.setString(1, tfUserId.getText());
+			preparedStmt.setString(2, tfName.getText());
+			preparedStmt.setString(3, tfContact.getText());
+			preparedStmt.setString(4, tfEmail.getText());
+			preparedStmt.setString(5, tfUserPassword.getText());
+			preparedStmt.executeUpdate();
+			preparedStmt.close();
+			showDialog("User Registration successful!");
+			clearFieldValues();
+			ScreenController.goToLoginPage(event);
+		} catch (Exception e) {
+			System.out.println("Error Message: " + e.getMessage());
+			e.printStackTrace();
+		}
 
-        if (!passwordField.getText().equals(confirmPasswordField.getText())) {
-            showValidationError(passwordField, null, "Passwords need to match");
-            applyErrorStyle(confirmPasswordField);
-            new Shake(confirmPasswordField).play();
-            return;
-        }
+	}
 
-        insertUserData(event);
-    }
+	// Pops-up the window upon field validation is success or failure
+	public void showDialog(String errorMessage) {
+		Dialog<String> dialog = new Dialog<String>();
+		dialog.setTitle("Registration");
+		ButtonType type = new ButtonType("OK", ButtonData.OK_DONE);
+		dialog.setContentText(errorMessage);
+		dialog.getDialogPane().getButtonTypes().add(type);
+		dialog.showAndWait();
+	}
 
-    private boolean validateNotEmpty(TextField textField, Label errorLabel, String errorMessage) {
-        if (!textField.getText().trim().isEmpty()) {
-            return true;
-        }
-        showValidationError(textField, errorLabel, errorMessage);
-        return false;
-    }
+	public boolean isNameValid() {
+		String name = tfName.getText().trim();
+		if (name.length() > 0) {
+			return true;
+		}
+		return false;
+	}
 
-    private boolean validateWithPattern(TextField textField, Label errorLabel, String regex, String errorMessage) {
-        if (Pattern.matches(regex, textField.getText())) {
-            return true;
-        }
-        showValidationError(textField, errorLabel, errorMessage);
-        return false;
-    }
+	public boolean isContactValid() {
+		String contact = tfContact.getText();
+		// regex for checking if number is 10digits or not
+		Pattern pattern = Pattern.compile("^\\d{10}$");
+		Matcher matcher = pattern.matcher(contact);
+		return matcher.matches();
+	}
 
-    private void showValidationError(TextField textField, Label errorLabel, String errorMessage) {
-        applyErrorStyle(textField);
-        if (errorLabel != null) {
-            errorLabel.setVisible(true);
-        }
-        showDialog(errorMessage);
-    }
+	public boolean isValidEmail() {
+		String email = tfEmail.getText();
+		// Using the email regex pattern to validate email field
+		String emailRegex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+		Pattern pattern = Pattern.compile(emailRegex);
+		Matcher matcher = pattern.matcher(email);
+		return matcher.matches();
+	}
 
-    private void applyErrorStyle(TextField textField) {
-        textField.setStyle("-fx-border-color: red; -fx-border-width: 2px ;");
-    }
+	public boolean isValidUsername() {
+		String username = tfUserId.getText();
+		if (username.length() > 0) {
+			return true;
+		}
+		return false;
+	}
 
-    private void insertUserData(ActionEvent event) {
-        String query = "insert into user_info values (?,?,?,?,?)";
-        try (Connection conn = DatabaseConnector.getInstance();
-             PreparedStatement preparedStmt = conn.prepareStatement(query)) {
+	public boolean isValidPassword() {
+		String pass = tfUserPassword.getText();
+		if (pass.length() > 0) {
+			return true;
+		}
+		return false;
+	}
 
-            preparedStmt.setString(1, userIdField.getText());
-            preparedStmt.setString(2, nameField.getText());
-            preparedStmt.setString(3, contactField.getText());
-            preparedStmt.setString(4, emailField.getText());
-            preparedStmt.setString(5, passwordField.getText());
-            preparedStmt.executeUpdate();
+	// Clear the field styles upon successful validation or on loading time
+	private void clearFieldsStyle() {
+		tfName.setStyle(null);
+		tfContact.setStyle(null);
+		tfEmail.setStyle(null);
+		tfUserId.setStyle(null);
+		tfUserPassword.setStyle(null);
+	}
 
-            showDialog("User Registration successful!");
-            clearFieldValues();
-            ScreenController.goToLoginPage(event);
-        } catch (Exception e)
-        		{
-            System.out.println("Error Message: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
+	// Mask the Error Labels on load everytime
+	private void maskErrorLabels() {
+		errorContact.setVisible(false);
+		errorEmail.setVisible(false);
+		errorNameField.setVisible(false);
+		errorPassword.setVisible(false);
+		errorUserName.setVisible(false);
 
-    private void showDialog(String errorMessage) {
-        Dialog<String> dialog = new Dialog<>();
-        dialog.setTitle("Registration");
-        ButtonType type = new ButtonType("OK", ButtonData.OK_DONE);
-        dialog.setContentText(errorMessage);
-        dialog.getDialogPane().getButtonTypes().add(type);
-        dialog.showAndWait();
-    }
+	}
 
-    private void clearStylesAndMaskLabels() {
-        clearStyles();
-        maskErrorLabels();
-    }
+	// Clear the field labels on load everytime
+	private void clearFieldValues() {
+		tfName.setText(null);
+		tfContact.setText(null);
+		tfEmail.setText(null);
+		tfUserId.setText(null);
+		tfUserPassword.setText(null);
 
-    private void clearStyles() {
-        nameField.setStyle(null);
-        contactField.setStyle(null);
-        emailField.setStyle(null);
-        userIdField.setStyle(null);
-        passwordField.setStyle(null);
-        confirmPasswordField.setStyle(null);
-    }
+	}
 
-    private void maskErrorLabels() {
-        errorContact.setVisible(false);
-        errorEmail.setVisible(false);
-        errorName.setVisible(false);
-        errorPassword.setVisible(false);
-        errorUsername.setVisible(false);
-    }
+	// Traverse to the Login Page
+	@FXML
+	void goToLogin(ActionEvent event) {
+		ScreenController.goToLoginPage(event);
+	}
 
-    private void clearFieldValues() {
-        nameField.setText(null);
-        contactField.setText(null);
-        emailField.setText(null);
-        userIdField.setText(null);
-        passwordField.setText(null);
-        confirmPasswordField.setText(null);
-    }
-
-    @FXML
-    void goToLogin(ActionEvent event) {
-        ScreenController.goToLoginPage(event);
-    }
 }
