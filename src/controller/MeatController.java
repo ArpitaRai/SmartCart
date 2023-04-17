@@ -16,7 +16,7 @@ import model.Product;
 public class MeatController extends ProductBaseController {
 
     @FXML
-    private Spinner<Integer> spinBeef;
+    private Spinner<Integer> spinBeef ;
     @FXML
     private Spinner<Integer> spinChicken;
     @FXML
