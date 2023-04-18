@@ -36,9 +36,9 @@ public class CatalogController extends ProductBaseController {
 	}
 
 	@FXML
-	public void DairyPage(ActionEvent event) {
+	public void BakeryPage(ActionEvent event) {
 
-		ScreenController.goToDairyPage(event);
+		ScreenController.goToBakeryPage(event);
 	}
 	
 	@FXML

@@ -145,7 +145,7 @@ public class DrinksController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnSprite")) {
-			CartItem ci = new CartItem("BEV003", "KoolAid", (Integer) spinSprite.getValue(),
+			CartItem ci = new CartItem("BEV003", "Sprite", (Integer) spinSprite.getValue(),
 					inventoryItems.get("BEV003").getPrice());
 
 			cart.addProduct(ci);
@@ -161,7 +161,7 @@ public class DrinksController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnMountainDew")) {
-			CartItem ci = new CartItem("BEV005", "Gatorade", (Integer)spinMountainDew.getValue(),
+			CartItem ci = new CartItem("BEV005", "Mountain Dew", (Integer)spinMountainDew.getValue(),
 					inventoryItems.get("BEV005").getPrice());
 
 			cart.addProduct(ci);
@@ -192,7 +192,7 @@ public class DrinksController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnDunkinCoffee")) {
-			CartItem ci = new CartItem("BEV009", "Seltzer", (Integer) spinDunkinCoffee.getValue(),
+			CartItem ci = new CartItem("BEV009", "Dunkin Coffee", (Integer) spinDunkinCoffee.getValue(),
 					inventoryItems.get("BEV009").getPrice());
 
 			cart.addProduct(ci);

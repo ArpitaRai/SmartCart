@@ -167,7 +167,7 @@ public class PharmacyController extends ProductBaseController {
 	private void addToCart(javafx.event.ActionEvent event) {
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnAdvil")) {
-			CartItem ci = new CartItem("PHA001", "Chicken", (Integer) spinAdvil.getValue(),
+			CartItem ci = new CartItem("PHA001", "Advil", (Integer) spinAdvil.getValue(),
 					inventoryItems.get("PHA001").getPrice());
 
 			cart.addProduct(ci);
@@ -175,7 +175,7 @@ public class PharmacyController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnAntacid")) {
-			CartItem ci = new CartItem("PHA002", "Fish", (Integer) spinAntacid.getValue(),
+			CartItem ci = new CartItem("PHA002", "Antacid", (Integer) spinAntacid.getValue(),
 					inventoryItems.get("PHA002").getPrice());
 
 			cart.addProduct(ci);
@@ -183,7 +183,7 @@ public class PharmacyController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnBandAid")) {
-			CartItem ci = new CartItem("PHA003","Beef", (Integer) spinBandAid.getValue(),
+			CartItem ci = new CartItem("PHA003","Band Aid", (Integer) spinBandAid.getValue(),
 					inventoryItems.get("PHA003").getPrice());
 
 			cart.addProduct(ci);
@@ -191,7 +191,7 @@ public class PharmacyController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnCrab")) {
-			CartItem ci = new CartItem("PHA004", "Crab", (Integer) spinVicks.getValue(),
+			CartItem ci = new CartItem("PHA004", "Vicks", (Integer) spinVicks.getValue(),
 					inventoryItems.get("PHA004").getPrice());
 
 			cart.addProduct(ci);
@@ -199,14 +199,14 @@ public class PharmacyController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnParacetamol")) {
-			CartItem ci = new CartItem("PHA005", "Clam", (Integer)spinParacetamol.getValue(),
+			CartItem ci = new CartItem("PHA005", "Paracetamol", (Integer)spinParacetamol.getValue(),
 					inventoryItems.get("PHA005").getPrice());
 
 			cart.addProduct(ci);
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnAntibiotic")) {
-			CartItem ci = new CartItem("PHA006", "Lamb", (Integer) spinAntibiotic.getValue(),
+			CartItem ci = new CartItem("PHA006", "Antibiotic", (Integer) spinAntibiotic.getValue(),
 					inventoryItems.get("PHA006").getPrice());
 
 			cart.addProduct(ci);
@@ -214,7 +214,7 @@ public class PharmacyController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnVaseline")) {
-			CartItem ci = new CartItem("PHA007", "Pork", (Integer) spinVaseline.getValue(),
+			CartItem ci = new CartItem("PHA007", "Vaseline", (Integer) spinVaseline.getValue(),
 					inventoryItems.get("PHA007").getPrice());
 
 			cart.addProduct(ci);
@@ -222,7 +222,7 @@ public class PharmacyController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnNasalSpray")) {
-			CartItem ci = new CartItem("PHA008", "Turkey", (Integer) spinNasalSpray.getValue(),
+			CartItem ci = new CartItem("PHA008", "Nasal Spray", (Integer) spinNasalSpray.getValue(),
 					inventoryItems.get("PHA008").getPrice());
 
 			cart.addProduct(ci);
@@ -230,7 +230,7 @@ public class PharmacyController extends ProductBaseController {
 		}
 
 		if (((Button) event.getTarget()).getId().toString().equals("btnBenadryl")) {
-			CartItem ci = new CartItem("PHA009", "Prawns", (Integer) spinBenadryl.getValue(),
+			CartItem ci = new CartItem("PHA009", "Benadryl", (Integer) spinBenadryl.getValue(),
 					inventoryItems.get("PHA009").getPrice());
 
 			cart.addProduct(ci);
