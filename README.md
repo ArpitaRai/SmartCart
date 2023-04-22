@@ -8,7 +8,7 @@ Name: Chethan Mahindrakar Email: mahindrakar.c@northeastern.edu
 
 Name: Jhalak Surve Email: surve.j@northeastern.edu
 
-#Steps to run the project
+<h2>Steps to run the project</h2>
 
 Import the project into Eclipse.
 Download and install the MySQL server
